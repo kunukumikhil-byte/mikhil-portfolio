@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kunuku Mikhil Sri Sai | Jupiter Tech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- 3D Model Viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<canvas id="particleCanvas"></canvas>
+
+<header class="reveal">
+    <div class="brand">
+        <model-viewer src="assets/realistic_jupiter.glb"
+            class="logo-3d"
+            auto-rotate
+            rotation-per-second="50deg"
+            disable-zoom
+            disable-pan
+            disable-tap>
+        </model-viewer>
+        <span>Jupiter Tech</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#jupiter3d">3D Jupiter</a>
+        <a href="#projects">Projects</a>
+        <a href="#founder">Founder</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home">
+    <div class="hero-text reveal">
+        <h2>Hi, I'm <span>Kunuku Mikhil Sri Sai</span></h2>
+        <div id="typing"></div>
+        <p class="intro">Founder & CEO of Jupiter Tech | Microelectronics & App Developer</p>
+
+        <a class="btn" href="resume.pdf" download><i class="fa-solid fa-download"></i> Download CV</a>
+        <a class="btn" href="#projects"><i class="fa-solid fa-code"></i> View Projects</a>
+
+        <div class="socials">
+            <a href="mailto:kunukumikhil@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://github.com/kunukumikhil-byte" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mikhil%20kunuku/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://leetcode.com/u/gvWF5BkAPL/" target="_blank"><i class="fa-solid fa-laptop-code"></i></a>
+        </div>
+    </div>
+
+    <img src="profile.jpg" class="profile-img reveal" alt="Profile">
+</section>
+
+<section id="about">
+    <h2 class="section-title reveal">About Me</h2>
+    <p class="about-text reveal">
+        Enthusiastic ECE student passionate about Microelectronics, Semiconductors, and Application Development.
+    </p>
+</section>
+
+<section id="skills">
+    <h2 class="section-title reveal">Skills</h2>
+    <div class="skills-container reveal">
+        <span class="skill-chip">C</span>
+        <span class="skill-chip">c++</span>
+        <span class="skill-chip">OOPs</span>
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">HTML</span>
+        <span class="skill-chip">CSS</span>
+        <span class="skill-chip">SQL</span>
+        <span class="skill-chip">Web Apps</span>
+        <span class="skill-chip">AI Tools</span>
+    </div>
+</section>
+
+<section id="jupiter3d">
+    <h2 class="section-title reveal">Jupiter in 3D</h2>
+    <model-viewer src="assets/realistic_jupiter.glb"
+        auto-rotate
+        camera-controls
+        rotation-per-second="30deg"
+        auto-rotate-delay="0"
+        disable-pan
+        shadow-intensity="1">
+    </model-viewer>
+</section>
+
+<section id="projects">
+    <h2 class="section-title reveal">Projects</h2>
+
+    <div class="project-card reveal">
+        <h3>Smart To-Do App (GPS)</h3>
+        <p>Location-based task automation</p>
+        <div class="project-links">
+            <a class="project-btn" href="https://gps-smart-todo.onrender.com/" target="_blank">Live</a>
+            <a class="project-btn" href="https://github.com/kunukumikhil-byte/gps-smart-todo" target="_blank">Code</a>
+        </div>
+    </div>
+
+    <div class="project-card reveal">
+        <h3>Jupiter Music Website</h3>
+        <p>Dark UI music streaming</p>
+        <div class="project-links">
+            <a class="project-btn" href="https://music-website-pmis.onrender.com/" target="_blank">Live</a>
+            <a class="project-btn" href="https://github.com/kunukumikhil-byte/music_website" target="_blank">Code</a>
+        </div>
+    </div>
+
+    <div class="project-card reveal">
+        <h3>AI based climate change prediction model</h3>
+        <p>predicts climate</p>
+        <div class="project-links">
+            <a class="project-btn" href="https://climate-prediction-k1ez.onrender.com/" target="_blank">Live</a>
+            <a class="project-btn" href="https://github.com/kunukumikhil-byte/CLIMATE-PREDICTION" target="_blank">Code</a>
+        </div>
+    </div>
+</section>
+
+<section id="founder">
+    <h2 class="section-title reveal">Founder</h2>
+    <div class="founder-box reveal">
+        <model-viewer src="assets/realistic_jupiter.glb" class="founder-logo"
+            auto-rotate disable-zoom disable-pan>
+        </model-viewer>
+        <div>
+            <h3>Kunuku Mikhil Sri Sai</h3>
+            <p><strong>Founder & CEO — Jupiter Tech 🚀</strong></p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title reveal">Contact</h2>
+    <p><strong>Email:</strong> kunukumikhil@gmail.com</p>
+    <p><strong>Phone:</strong> +91 8688911646</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
