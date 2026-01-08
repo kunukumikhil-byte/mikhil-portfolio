@@ -86,5 +86,32 @@ function revealOnScroll() {
     });
 }
 
+/* Store Messages in DB */
+const form = document.getElementById("contactForm");
+const statusText = document.getElementById("formStatus");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    statusText.textContent = "Sending...";
+
+    const res = await fetch("/send-message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        })
+    });
+
+    if (res.ok) {
+        statusText.textContent = "✅ Message stored successfully!";
+        form.reset();
+    } else {
+        statusText.textContent = "❌ Failed to send message.";
+    }
+});
+
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login | Jupiter Tech</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #020617, #0f172a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e5e7eb;
+        }
+
+        .login-card {
+            background: #020617;
+            width: 100%;
+            max-width: 420px;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .login-card h2 {
+            margin: 0 0 10px;
+            text-align: center;
+            color: #22d3ee;
+            font-weight: 600;
+        }
+
+        .login-card p {
+            text-align: center;
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid #1e293b;
+            background: #0f172a;
+            color: #e5e7eb;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .login-card input:focus {
+            border-color: #22d3ee;
+        }
+
+        .login-card button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(to right, #8b5cf6, #22d3ee);
+            color: #020617;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .login-card button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(34,211,238,0.3);
+        }
+
+        .error {
+            background: rgba(248,113,113,0.1);
+            color: #f87171;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 13px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>🔐 Admin Login</h2>
+        <p>Authorized access only</p>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="post">
+            <input type="text" name="username" placeholder="Admin Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="footer-text">
+            Jupiter Tech • Admin Panel
+        </div>
+    </div>
+
+</body>
+</html>

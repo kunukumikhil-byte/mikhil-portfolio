@@ -12,18 +12,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <!-- 3D Model Viewer -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Flask Static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
 <canvas id="particleCanvas"></canvas>
 
+<!-- ================= HEADER ================= -->
 <header class="reveal">
     <div class="brand">
-        <model-viewer src="assets/realistic_jupiter.glb"
+        <model-viewer
+            src="{{ url_for('static', filename='models/realistic_jupiter.glb') }}"
             class="logo-3d"
             auto-rotate
             rotation-per-second="50deg"
@@ -38,21 +43,31 @@
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#jupiter3d">3D Jupiter</a>
         <a href="#projects">Projects</a>
         <a href="#founder">Founder</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
+<!-- ================= HOME ================= -->
 <section id="home">
     <div class="hero-text reveal">
         <h2>Hi, I'm <span>Kunuku Mikhil Sri Sai</span></h2>
         <div id="typing"></div>
-        <p class="intro">Founder & CEO of Jupiter Tech | Microelectronics & App Developer</p>
 
-        <a class="btn" href="resume.pdf" download><i class="fa-solid fa-download"></i> Download CV</a>
-        <a class="btn" href="#projects"><i class="fa-solid fa-code"></i> View Projects</a>
+        <p class="intro">
+            Founder & CEO of Jupiter Tech | Microelectronics & App Developer
+        </p>
+
+        <div class="hero-buttons">
+            <a class="btn" href="{{ url_for('static', filename='resume.pdf') }}" download>
+                <i class="fa-solid fa-download"></i> Download CV
+            </a>
+
+            <a class="btn" href="#projects">
+                <i class="fa-solid fa-code"></i> View Projects
+            </a>
+        </div>
 
         <div class="socials">
             <a href="mailto:kunukumikhil@gmail.com"><i class="fa-solid fa-envelope"></i></a>
@@ -62,21 +77,28 @@
         </div>
     </div>
 
-    <img src="profile.jpg" class="profile-img reveal" alt="Profile">
+    <img src="{{ url_for('static', filename='profile.jpg') }}"
+         class="profile-img reveal"
+         alt="Profile">
 </section>
 
+<!-- ================= ABOUT ================= -->
 <section id="about">
     <h2 class="section-title reveal">About Me</h2>
     <p class="about-text reveal">
-        Enthusiastic ECE student passionate about Microelectronics, Semiconductors, and Application Development.
+        Enthusiastic ECE student passionate about Microelectronics,
+        Semiconductors, and Application Development.
+        <br><br>
+        <strong>CGPA (1st Semester): 9.5 / 10</strong>
     </p>
 </section>
 
+<!-- ================= SKILLS ================= -->
 <section id="skills">
     <h2 class="section-title reveal">Skills</h2>
     <div class="skills-container reveal">
         <span class="skill-chip">C</span>
-        <span class="skill-chip">c++</span>
+        <span class="skill-chip">C++</span>
         <span class="skill-chip">OOPs</span>
         <span class="skill-chip">Python</span>
         <span class="skill-chip">HTML</span>
@@ -87,18 +109,21 @@
     </div>
 </section>
 
+<!-- ================= 3D SECTION (NO TITLE) ================= -->
 <section id="jupiter3d">
-    <h2 class="section-title reveal">Jupiter in 3D</h2>
-    <model-viewer src="assets/realistic_jupiter.glb"
+    <model-viewer
+        src="{{ url_for('static', filename='models/realistic_jupiter.glb') }}"
         auto-rotate
         camera-controls
         rotation-per-second="30deg"
         auto-rotate-delay="0"
         disable-pan
-        shadow-intensity="1">
+        shadow-intensity="1"
+        style="width:420px;height:420px;margin:auto;display:block;">
     </model-viewer>
 </section>
 
+<!-- ================= PROJECTS ================= -->
 <section id="projects">
     <h2 class="section-title reveal">Projects</h2>
 
@@ -122,7 +147,7 @@
 
     <div class="project-card reveal">
         <h3>AI based climate change prediction model</h3>
-        <p>predicts climate</p>
+        <p>Predicts climate patterns</p>
         <div class="project-links">
             <a class="project-btn" href="https://climate-prediction-k1ez.onrender.com/" target="_blank">Live</a>
             <a class="project-btn" href="https://github.com/kunukumikhil-byte/CLIMATE-PREDICTION" target="_blank">Code</a>
@@ -130,12 +155,18 @@
     </div>
 </section>
 
+<!-- ================= FOUNDER ================= -->
 <section id="founder">
     <h2 class="section-title reveal">Founder</h2>
     <div class="founder-box reveal">
-        <model-viewer src="assets/realistic_jupiter.glb" class="founder-logo"
-            auto-rotate disable-zoom disable-pan>
+        <model-viewer
+            src="{{ url_for('static', filename='models/realistic_jupiter.glb') }}"
+            auto-rotate
+            camera-controls
+            shadow-intensity="1"
+            style="width:350px;height:350px;">
         </model-viewer>
+
         <div>
             <h3>Kunuku Mikhil Sri Sai</h3>
             <p><strong>Founder & CEO — Jupiter Tech 🚀</strong></p>
@@ -143,12 +174,22 @@
     </div>
 </section>
 
+<!-- ================= CONTACT ================= -->
 <section id="contact">
-    <h2 class="section-title reveal">Contact</h2>
-    <p><strong>Email:</strong> kunukumikhil@gmail.com</p>
-    <p><strong>Phone:</strong> +91 8688911646</p>
+    <h2 class="section-title reveal">Contact Me</h2>
+
+    <form id="contactForm" class="contact-form reveal">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Doubts / Collaboration message" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p id="formStatus"></p>
+    </form>
 </section>
 
-<script src="script.js"></script>
+<!-- ================= SCRIPT ================= -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>
