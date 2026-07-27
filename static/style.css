@@ -169,6 +169,14 @@ h1 {
 .social-links a[aria-label="Gmail"]:hover { background-color: #ea4335; }
 .social-links a[aria-label="X (Twitter)"]:hover { background-color: #000000; }
 
+/* Custom Hover Colors for LeetCode & GeeksforGeeks */
+.social-links a[aria-label="LinkedIn"]:hover { background-color: #0a66c2; }
+.social-links a[aria-label="LeetCode"]:hover { background-color: #ffa116; }
+.social-links a[aria-label="GeeksforGeeks"]:hover { background-color: #2f9d57; }
+.social-links a[aria-label="Instagram"]:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aebe6 90%); }
+.social-links a[aria-label="Gmail"]:hover { background-color: #ea4335; }
+.social-links a[aria-label="X (Twitter)"]:hover { background-color: #000000; }
+
 /* ==========================================================
    RECTANGULAR ZIG-ZAG (SNAKE) ROADMAP
    ========================================================== */
