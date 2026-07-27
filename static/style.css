@@ -287,7 +287,7 @@ h1 {
 }
 
 /* ==========================================================
-   3D COVERFLOW CAROUSEL (NO BOXES, TRANSPARENT FLANKS)
+   3D COVERFLOW CAROUSEL (CERTIFICATIONS)
    ========================================================== */
 .certifications-section {
     margin-top: 60px;
@@ -320,7 +320,6 @@ h1 {
     perspective: 1000px;
 }
 
-/* Individual Card (No bounding box) */
 .cert-card {
     position: absolute;
     width: 380px;
@@ -338,7 +337,6 @@ h1 {
     filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.25));
 }
 
-/* Text info directly underneath image */
 .cert-info {
     margin-top: 15px;
     text-align: center;
@@ -358,9 +356,7 @@ h1 {
     line-height: 1.4;
 }
 
-/* --- CAROUSEL STATES --- */
-
-/* Center (Main Active Certificate) */
+/* Carousel States */
 .cert-card.active {
     opacity: 1;
     transform: scale(1.05) translateX(0);
@@ -372,14 +368,12 @@ h1 {
     opacity: 1;
 }
 
-/* Left Certificate (Semi-Transparent) */
 .cert-card.left-card {
     opacity: 0.45;
     transform: scale(0.8) translateX(-75%);
     z-index: 5;
 }
 
-/* Right Certificate (Semi-Transparent) */
 .cert-card.right-card {
     opacity: 0.45;
     transform: scale(0.8) translateX(75%);
@@ -435,6 +429,327 @@ h1 {
 }
 
 /* ==========================================================
+   EDUCATION TIMELINE SECTION
+   ========================================================== */
+.education-section {
+    margin-top: 60px;
+    text-align: center;
+    padding: 20px 0 60px 0;
+}
+
+.education-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.timeline-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Blue connecting line running through location pin centers */
+.timeline-line {
+    position: absolute;
+    top: 38px;
+    left: 5%;
+    width: 90%;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #00d2ff);
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Red location pin icon */
+.timeline-pin {
+    width: 40px;
+    height: 40px;
+    background-color: #ff3b30;
+    color: #ffffff;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(255, 59, 48, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.timeline-pin i {
+    transform: rotate(45deg);
+    font-size: 1.2rem;
+}
+
+.timeline-item:hover .timeline-pin {
+    transform: rotate(-45deg) scale(1.25);
+}
+
+/* High-contrast solid white card with dark text */
+.timeline-card {
+    margin-top: 25px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    padding: 18px 15px;
+    border-radius: 14px;
+    width: 85%;
+    color: #1f2937;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover .timeline-card {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-year {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0284c7;
+    margin-bottom: 6px;
+}
+
+.timeline-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 4px 0;
+}
+
+.timeline-card p {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin: 0;
+}
+
+.timeline-card small {
+    display: block;
+    margin-top: 6px;
+    color: #6b7280;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ==========================================================
+   PROJECTS & INTERNSHIPS SECTION (NO BOX, CLEAN SPACED LAYOUT)
+   ========================================================== */
+.projects-section {
+    margin-top: 60px;
+    padding: 20px 0 60px 0;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #000000;
+}
+
+.projects-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* Individual Project Row */
+.project-card {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px; /* Space between text details and coverflow media */
+    box-shadow: none;
+}
+
+.project-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    height: 100%;
+}
+
+.project-details h3 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 6px;
+}
+
+.project-role {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0284c7;
+    margin-bottom: 12px;
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.project-timeline {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+    margin-top: auto;
+}
+
+.timeline-bar {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    right: 10px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff3b30, #007bff);
+    z-index: 1;
+}
+
+.time-node {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: lightgray; /* Blends with body background */
+    padding: 0 6px;
+}
+
+.pin-icon {
+    font-size: 1.4rem;
+    color: #ff3b30;
+    margin-bottom: 4px;
+}
+
+.date-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* Mini 3D Coverflow Container */
+.project-right {
+    width: 320px;
+    min-width: 260px;
+    height: 190px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.project-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 800px;
+}
+
+.project-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Supports both img and video tags seamlessly */
+.project-slide {
+    position: absolute;
+    max-width: 80%;
+    max-height: 85%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.6) translateX(0);
+    z-index: 1;
+
+    border: 3px solid #1a1a1a;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Coverflow States */
+.project-slide.active {
+    opacity: 1;
+    transform: scale(1.05) translateX(0);
+    z-index: 10;
+    pointer-events: auto;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.project-slide.left-card {
+    opacity: 0.4;
+    transform: scale(0.75) translateX(-55%);
+    z-index: 5;
+}
+
+.project-slide.right-card {
+    opacity: 0.4;
+    transform: scale(0.75) translateX(55%);
+    z-index: 5;
+}
+
+/* Mini Coverflow Controls */
+.project-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    cursor: pointer;
+    z-index: 20;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-slider-btn.prev-btn { left: -10px; }
+.project-slider-btn.next-btn { right: -10px; }
+
+.project-slider-btn:hover {
+    background: #000000;
+    transform: translateY(-50%) scale(1.15);
+}
+
+/* ==========================================================
    MOBILE RESPONSIVENESS
    ========================================================== */
 @media (max-width: 768px) {
@@ -486,5 +801,48 @@ h1 {
     .cert-card.left-card,
     .cert-card.right-card {
         opacity: 0.2;
+    }
+
+    /* Vertical layout for Education Timeline on Mobile */
+    .timeline-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+
+    .timeline-line {
+        top: 0;
+        left: 38px;
+        width: 4px;
+        height: 100%;
+    }
+
+    .timeline-item {
+        flex-direction: row;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .timeline-card {
+        margin-top: 0;
+        margin-left: 20px;
+        width: 100%;
+    }
+
+    /* Vertical layout for Project Cards on Mobile */
+    .project-card {
+        flex-direction: column-reverse;
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    .project-right {
+        width: 100%;
+        height: 180px;
+    }
+
+    .project-timeline {
+        max-width: 100%;
+        margin-top: 20px;
     }
 }
