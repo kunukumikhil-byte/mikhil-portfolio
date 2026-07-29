@@ -468,7 +468,7 @@ h1 {
     left: 5%;
     width: 90%;
     height: 4px;
-    background: linear-gradient(90deg, #007bff, #00d2ff);
+    background: linear-gradient(90deg, #000000, #06303a);
     z-index: 1;
 }
 
@@ -485,14 +485,14 @@ h1 {
 .timeline-pin {
     width: 40px;
     height: 40px;
-    background-color: #ff3b30;
+    background-color: #000000;
     color: #ffffff;
     border-radius: 50% 50% 50% 0;
     transform: rotate(-45deg);
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(255, 59, 48, 0.4);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
 }
 
