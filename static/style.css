@@ -8,7 +8,7 @@
 body {
     background-color: lightgray;
     text-align: center;
-    font-family: "Times New Roman", serif;
+    font-family: "Inter", Arial, sans-serif;
     width: 100%;
     overflow-x: hidden;
 }
@@ -79,10 +79,9 @@ h1 {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 3px solid black;
     font-weight: bold;
     font-family: inherit;
-    font-size: clamp(0.72rem, 2.6vw, 1.1rem);
+    font-size: clamp(0.85rem, 2vw, 1.05rem);
     width: 0;
     margin: 0 auto;
 }
@@ -899,5 +898,130 @@ h1 {
     .project-timeline {
         max-width: 100%;
         margin-top: 20px;
+    }
+}
+
+/* ==========================================================
+   BILLBOARD MARQUEE - GOTHIC TICKER ANIMATION
+   ========================================================== */
+.billboard-marquee-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    border: none;
+    margin-top: 32px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.billboard-marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    padding: 12px 0;
+    background-color: transparent;
+}
+
+.billboard-track {
+    display: flex;
+    width: max-content;
+    animation: billboardScroll 22s linear infinite;
+}
+
+.billboard-marquee:hover .billboard-track {
+    animation-play-state: paused;
+}
+
+.billboard-group {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.billboard-group .project-name {
+    font-family: 'UnifrakturMaguntia', 'Pirata One', cursive, serif;
+    font-size: 2.2rem;
+    color: #111111;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+.billboard-group .bullet {
+    color: #777777;
+    font-size: 1.3rem;
+}
+
+/* Smooth Right-to-Left Infinite Animation */
+@keyframes billboardScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .billboard-group .project-name {
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
+    }
+
+    .billboard-group {
+        gap: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+
+/* Cleaner typography and text-only typing animation */
+body {
+    font-family: "Inter", Arial, sans-serif;
+}
+
+.typing {
+    border-right: none !important;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.all-projects-button-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 28px auto 10px;
+}
+
+.all-projects-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 24px;
+    border-radius: 28px;
+    background: #171717;
+    color: #ffffff;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.14);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.all-projects-button:hover {
+    background: #4545c8;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .typing {
+        max-width: 94vw;
+        font-size: 0.82rem;
     }
 }
