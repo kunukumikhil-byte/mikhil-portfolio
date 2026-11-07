@@ -1034,3 +1034,41 @@ body {
 .finsentisis-project-links .btn-project-link {
     white-space: nowrap;
 }
+
+/* Finsentisis internship links: force visible, consistent portfolio buttons */
+.finsentisis-project-links {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.finsentisis-project-links .btn-project-link,
+.finsentisis-project-links .btn-project-link:visited {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    min-height: 42px;
+    border: 1px solid #111111;
+    border-radius: 25px;
+    background: #111111 !important;
+    color: #ffffff !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none !important;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.finsentisis-project-links .btn-project-link:hover,
+.finsentisis-project-links .btn-project-link:focus-visible {
+    background: #333333 !important;
+    border-color: #333333;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
