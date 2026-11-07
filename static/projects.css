@@ -109,6 +109,7 @@ body { background: #050505; color: #f5f5f5; }
 .button-outline { color: #f5f5f5; border-color: #666; }
 .button-outline:hover { background: #222; }
 .section, .section.other-section, .section.portfolio-sites { background: #050505; color: #f7f7f7; }
+<<<<<<< HEAD
 
 
 /* ESP32 Gesture Mouse project media section */
@@ -159,3 +160,5 @@ body { background: #050505; color: #f5f5f5; }
     .gesture-gallery { grid-template-columns: 1fr; }
     .gesture-gallery img { height: auto; max-height: 320px; object-fit: contain; }
 }
+=======
+>>>>>>> b8d30217e4030389a00ab29b4de76a60e35d7765
