@@ -1025,3 +1025,12 @@ body {
         font-size: 0.82rem;
     }
 }
+
+/* Finsentisis internship links: same button styling as other portfolio links */
+.finsentisis-project-links {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.finsentisis-project-links .btn-project-link {
+    white-space: nowrap;
+}
